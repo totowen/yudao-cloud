@@ -19,6 +19,7 @@
         <!-- 统一依赖管理 -->
         <spring.boot.version>2.7.18</spring.boot.version>
         <spring.cloud.version>2021.0.5</spring.cloud.version>
+        <nacos.client.version>2.3.0</nacos.client.version>
         <spring.cloud.alibaba.version>2021.0.4.0</spring.cloud.alibaba.version>
         <!-- Web 相关 -->
         <servlet.versoin>2.5</servlet.versoin>
@@ -107,6 +108,26 @@
                 <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-config</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-config</artifactId>
+                <version>${nacos.client.version}</version>
             </dependency>
 
             <!-- 业务组件 -->
